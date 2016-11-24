@@ -1,50 +1,50 @@
 'use strict';
-//
-const getFormFields = require('../../../lib/get-form-fields');
 
+const getFormFields = require(`../../../lib/get-form-fields`);
+const store = require('../store');
 const api = require('./api');
 const ui = require('./ui');
 
-
-const onSignUp = (event) => {
+const onSignUp = function (event) {
+  let data = getFormFields(this);
   event.preventDefault();
-  let data = getFormFields(event.target);
   api.signUp(data)
-  .done(ui.success)
-  .fail(ui.failure);
+    .then(ui.success)
+    .catch(ui.failure);
+    $('#sign-up-modal').modal('hide');
 };
 
-const onSignIn = (event) => {
+const onSignIn = function (event) {
+  let data = getFormFields(this);
   event.preventDefault();
-  let data = getFormFields(event.target);
   api.signIn(data)
-  .done(ui.signInSuccess)
-  .fail(ui.failure);
+    .then(ui.signInSuccess)
+    .catch(ui.failure);
+    $('#sign-in-modal').modal('hide');
 };
 
-const onSignOut = (event) => {
+const onChangePassword = function (event) {
+  let data = getFormFields(this);
   event.preventDefault();
-  api.signOut()
-  .done(ui.signOutSuccess)
-  .fail(ui.failure);
+    api.changePassword(data)
+    .then(ui.success)
+    .catch(ui.failure);
 };
-
-const onChangePassword = (event) => {
+//There is a better way to log out individual player
+const onSignOut = function (event){
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.changePassword(data)
-  .done(ui.success)
-  .fail(ui.failure);
+  api.signOut(store.user)
+  .then(ui.success)
+  .catch(ui.failure);
 };
-
 
 const addHandlers = () => {
-  $('#sign-up').on('submit', onSignUp);
-  $('#sign-in').on('submit', onSignIn);
-  $('#sign-out').on('submit', onSignOut);
-  $('#change-password').on('submit', onChangePassword);
+  $('.sign-up-form').on('submit', onSignUp);
+  $('.sign-in-form').on('submit', onSignIn);
+  $('.change-password-form').on('submit', onChangePassword);
+  $('.sign-out').on('submit', onSignOut);
 };
-//
+
 module.exports = {
   addHandlers,
 };
