@@ -1,6 +1,6 @@
 'use strict';
 
-const app = require('../app.js');
+const store = require('../store.js');
 
 const success = (data) => {
   if (data) {
@@ -15,13 +15,13 @@ const failure = (error) => {
 };
 
 const signInSuccess = (data) => {
-  app.user = data.user;
-  console.log(app.user);
+  store.user = data.user;
+  console.log(store.user);
 };
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');
-  app.user = null;
+  store.user = null;
 };
 
 module.exports = {
