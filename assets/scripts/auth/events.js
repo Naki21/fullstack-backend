@@ -1,5 +1,5 @@
 'use strict';
-// const showSignInTemplate = require('../templates/show-sign-in');
+const showSignInTemplate = require('../templates/show-sign-in.handlebars');
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 const store = require('../store');
@@ -38,13 +38,13 @@ const onSignOut = function(event) {
     .then(ui.success)
     .catch(ui.failure);
 };
-// const showSignIn = () => {
-//   $('.target').html(showSignInTemplate());
-//   console.log("yoyoyoy");
-// };
+const showSignIn = () => {
+  $('.content').html(showSignInTemplate(content));
+  console.log("yoyoyoy");
+};
 
 const addHandlers = () => {
-  // $('#sign-in-button').on('submit', showSignIn);
+  $('#getSignInButton').on('click', showSignIn);
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);

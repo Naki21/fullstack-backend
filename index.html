@@ -16,9 +16,9 @@
       <div class="navbar-header">
 
         <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
-          <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-          <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
-        <button type="button" id="sign-out-button"class="btn btn-primary btn">Sign Out</button>
+        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
+        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
+        <button type="button" id="sign-out-button" class="btn btn-primary btn">Sign Out</button>
 
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -34,7 +34,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-      </div><!--/.nav-collapse -->
+      </div>
+      <!--/.nav-collapse -->
     </div>
   </nav>
 
@@ -43,114 +44,127 @@
       <h1>Bootstrap starter template</h1>
       <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
     </div>
-  </div><!-- /.container -->
+    <button id="getSignInButton" class="btn btn-primary btn">Select Your Fighter!</button>
+    <div id="content" class="content">
 
+
+
+    </div>
+    <!-- /.container -->
+    <div class="container-fluid"></div>
+    <div class="row">
+      <div class="col-xs-5 col-md-offset-1 col-md-4"><img src="http://media2.giphy.com/media/BkMqOEaXUSgIE/giphy.gif" class="img-rounded img-responsive" alt="Responsive image"></div>
+
+    <div class="col-xs-2">V.S.</div>
+    <div class="col-xs-5 col-md-4"> <img src="http://media2.giphy.com/media/BkMqOEaXUSgIE/giphy.gif" class="img-rounded img-responsive" alt="Responsive image"></div>
+  </div>
+</div>
   <!--sign up modle-->
-<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
-      </div>
-      <div class="modal-body">
-        <form class="sign-up-form">
-          <div class="form-group">
-            <label>Email address</label>
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!--end sign up modal-->
-<!--sign in modal-->
-<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
-      </div>
-      <div class="modal-body">
-        <form class="sign-in-form">
-          <div class="form-group">
-            <label>Email address</label>
-            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="credentials[password]" id="exampleInputPassword1" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </form>
+  <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+        </div>
+        <div class="modal-body">
+          <form class="sign-up-form">
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="credentials[password]" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--end sign in modal-->
-<!-- change pw modal-->
-<div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
-      </div>
-      <div class="modal-body">
-        <form class="change-password-form">
-          <div class="form-group">
-            <label>Old Password</label>
-            <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
-          </div>
-          <div class="form-group">
-            <label>New Password</label>
-            <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </form>
+  <!--end sign up modal-->
+  <!--sign in modal-->
+  <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">SIGN IN</h4>
+        </div>
+        <div class="modal-body">
+          <form class="sign-in-form">
+            <div class="form-group">
+              <label>Email address</label>
+              <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" name="credentials[password]" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!--end change pw modal-->
-<!-- Button trigger Stats modal -->
+  <!--end sign in modal-->
+  <!-- change pw modal-->
+  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">SIGN UP</h4>
+        </div>
+        <div class="modal-body">
+          <form class="change-password-form">
+            <div class="form-group">
+              <label>Old Password</label>
+              <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password">
+            </div>
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" class="form-control" name="passwords[new]" placeholder="New Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end change pw modal-->
+  <!-- Button trigger Stats modal -->
 
-<!-- Stats Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Stats</h4>
-      </div>
-      <div class="stats-modal-body">
+  <!-- Stats Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Stats</h4>
+        </div>
+        <div class="stats-modal-body">
 
-      </div>
-      <div class="modal-footer">
-        <form class="form-inline" id="get-stats">
-          <button type="submit" class="btn btn-primary">Get Stats</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <form class="form-inline" id="get-stats">
+            <button type="submit" class="btn btn-primary">Get Stats</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </form>
 
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- end of Stats Modal-->
+  <!-- end of Stats Modal-->
 
 
 </body>
@@ -186,7 +200,7 @@ Top content
                   <div class="description">
                     <p>
                       This is a free responsive login form made with Bootstrap.
-                      Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
+                      Download it on <a href=""><strong>AZMIND</strong></a>, customize and use it as you like!
                     </p>
                   </div>
               </div>
