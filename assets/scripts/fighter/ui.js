@@ -3,8 +3,9 @@ const showRandomFighter = require('../templates/show-random-fighter.handlebars')
 
 const success = (data) => {
   if (data) {
-    console.log(data.data.url);
-    $("#fighterDisplay").html(showRandomFighter(data.data.url));
+    let source = data.data;
+    console.log(source);
+    $("#fighterDisplay").html(showRandomFighter(source));
   } else {
     console.log('Success');
   }
