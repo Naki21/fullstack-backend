@@ -6,14 +6,20 @@ const randomFighter = () =>
     url: app.host + "/fighter",
     method: 'GET'
   });
+const deleteBarracks = () =>
+  $.ajax({
+    url: app.host + "/fighters/" + 3,
+    method: 'DELETE',
+  });
+
 const postBarracks = () =>
   $.ajax({
-    url: app.host + "/barracks",
+    url: app.host + "/fighters",
     method: 'POST',
     data: {
-      barrack: {
+      fighter: {
         user_id: 1,
-        giphy_id: 'sadfsdfsd',
+        image_url: 'asdas',
       },
     },
   });
@@ -35,6 +41,7 @@ const postBattle = () =>
 
 module.exports = {
   randomFighter,
+  deleteBarracks,
   postBarracks,
   postBattle
 };

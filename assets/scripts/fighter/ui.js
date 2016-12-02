@@ -4,7 +4,7 @@ const showRandomFighter = require('../templates/show-random-fighter.handlebars')
 
 const success = (data) => {
     console.log('Success');
-
+    console.log(data);
 };
 
 const failure = (error) => {
