@@ -15,10 +15,18 @@ const setRandomFighter = function() {
     .then(ui.success)
     .catch(ui.failure);
 };
+const createBattle = function () {
+  console.log('made it here3');
+  api.postBattle()
+    .then(ui.success)
+    .catch(ui.failure);
+};
+
 
 const addHandlers = () => {
   $('#get-fighter-button').on('click', getRandomFighter);
   $('#save-fighter-button').on('click', setRandomFighter);
+  $('#create-battle-button').on('click', createBattle);
 };
 
 module.exports = {

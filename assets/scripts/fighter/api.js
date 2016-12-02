@@ -17,7 +17,24 @@ const postBarracks = () =>
       },
     },
   });
+
+const postBattle = () =>
+  $.ajax({
+    url: app.host + "/battles",
+    method: 'POST',
+    data: {
+      battle: {
+        "f_val": 57,
+        "u_val": 33,
+        "opponent": "2HzvYHbtVQNYA",
+        "win?": null,
+        "barrack_id": 1,
+      },
+    },
+  });
+
 module.exports = {
   randomFighter,
-  postBarracks
+  postBarracks,
+  postBattle
 };
