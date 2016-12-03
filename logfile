@@ -14,3 +14,24 @@ LOG:  database system was shut down at 2016-12-01 21:55:48 EST
 LOG:  MultiXact member wraparound protections are now enabled
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was shut down at 2016-12-03 01:20:27 EST
+LOG:  MultiXact member wraparound protections are now enabled
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  database "full-stack-project-rails-api_development" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "full-stack-project-rails-api_development"
+ERROR:  database "full-stack-project-rails-api_development" already exists
+STATEMENT:  CREATE DATABASE "full-stack-project-rails-api_development" ENCODING = 'unicode'
+ERROR:  null value in column "created_at" violates not-null constraint
+DETAIL:  Failing row contains (1, 'aaaaaa', null, null, null).
+STATEMENT:  INSERT INTO public.fighters(id, url) VALUES ('1'::integer, '''aaaaaa'''::character varying)
+ERROR:  null value in column "user_id" violates not-null constraint
+DETAIL:  Failing row contains (1, asdas, 2016-12-03 18:23:40.9014, 2016-12-03 18:23:40.9014, null).
+STATEMENT:  INSERT INTO "fighters" ("url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "user_id" violates not-null constraint
+DETAIL:  Failing row contains (2, asdas, 2016-12-03 18:24:45.206104, 2016-12-03 18:24:45.206104, null).
+STATEMENT:  INSERT INTO "fighters" ("url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  null value in column "user_id" violates not-null constraint
+DETAIL:  Failing row contains (3, asdas, 2016-12-03 18:25:03.56744, 2016-12-03 18:25:03.56744, null).
+STATEMENT:  INSERT INTO "fighters" ("url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
