@@ -39,7 +39,19 @@ const postBattle = () =>
     },
   });
 
+const updateBarracks = () =>
+  $.ajax({
+    url: app.host + "/barracks/6",
+    method: 'PATCH',
+    data: {
+      barrack: {
+        "url": "www.getems",
+      },
+    },
+  });
+
 module.exports = {
+  updateBarracks,
   randomFighter,
   deleteBarracks,
   postBarracks,
