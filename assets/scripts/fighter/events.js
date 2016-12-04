@@ -25,7 +25,7 @@ const deleteFighter = function() {
 const createBattle = function() {
   console.log('made it here5');
   api.postBattle()
-    .then(ui.success)
+    .then(ui.createBattleSuccess)
     .catch(ui.failure);
 };
 const updateCurrentFighter = function() {

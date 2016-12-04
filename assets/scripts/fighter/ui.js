@@ -2,7 +2,6 @@
 const store = require('../store.js');
 const showRandomFighter = require('../templates/show-random-fighter.handlebars');
 const showFightBox = require('../templates/fightbox.handlebars');
-const events = require('./events.js');
 
 const success = (data) => {
   console.log('Success');
@@ -22,7 +21,7 @@ const getRandomSuccess = (data) => {
 };
 const setRandomSuccess = (data) => {
     console.log(data);
-    store.current_fighter = data.fighter.id;
+    store.current_fighter = data.fighter;
     $('#get-fighter-button').hide();
     // $("#fighterDisplay").html(showFightBox(data)).hide();
     $('.lead').fadeOut(600, function() {
@@ -31,11 +30,15 @@ const setRandomSuccess = (data) => {
       $('#fighterDisplay').html("<button type='button' id='create-battle-button' class='btn btn-primary btn'>Create Battle!</button>");
     };
 
-const createBattleSuccess = () => {
-
+const createBattleSuccess = (data) => {
+let oppo = data.battle;
+console.log(oppo);
+$('#create-battle-button').fadeOut(500);
+$('#fighterDisplay').html(showFightBox(oppo));
 };
 
     module.exports = {
+      createBattleSuccess,
       setRandomSuccess,
       getRandomSuccess,
       success,

@@ -43,27 +43,13 @@ const postBattle = () =>
     },
     data: {
       battle: {
-        "fighter_id": 1,
+        "fighter_id": store.current_fighter.id,
       },
     },
   });
 
-const updateBarracks = () =>
-  $.ajax({
-    url: app.host + "/barracks/6",
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token,
-    },
-    data: {
-      barrack: {
-        "url": "www.getems",
-      },
-    },
-  });
 
 module.exports = {
-  updateBarracks,
   randomFighter,
   deleteBarracks,
   postFighters,
