@@ -12,7 +12,7 @@ const getRandomFighter = function() {
 const setRandomFighter = function() {
   console.log('made it here2');
   api.postFighters()
-    .then(ui.success)
+    .then(ui.setRandomSuccess)
     .catch(ui.failure);
 
 };
