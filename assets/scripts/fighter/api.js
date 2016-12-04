@@ -19,7 +19,7 @@ const deleteBarracks = () =>
     }
   });
 
-const postBarracks = () =>
+const postFighters = () =>
   $.ajax({
     url: app.host + "/fighters",
     method: 'POST',
@@ -44,11 +44,7 @@ const postBattle = () =>
     },
     data: {
       battle: {
-        "f_val": 57,
-        "u_val": 33,
-        "opponent": "2HzvYHbtVQNYA",
-        "win?": null,
-        "barrack_id": 1,
+        "fighter_id": 1,
       },
     },
   });
@@ -71,6 +67,6 @@ module.exports = {
   updateBarracks,
   randomFighter,
   deleteBarracks,
-  postBarracks,
+  postFighters,
   postBattle
 };

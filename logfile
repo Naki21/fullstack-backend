@@ -35,3 +35,12 @@ STATEMENT:  INSERT INTO "fighters" ("url", "created_at", "updated_at") VALUES ($
 ERROR:  null value in column "user_id" violates not-null constraint
 DETAIL:  Failing row contains (3, asdas, 2016-12-03 18:25:03.56744, 2016-12-03 18:25:03.56744, null).
 STATEMENT:  INSERT INTO "fighters" ("url", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"
+ERROR:  column "barracks_id" of relation "battles" does not exist
+STATEMENT:  ALTER TABLE "battles" DROP "barracks_id"
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+FATAL:  terminating connection due to administrator command
+FATAL:  terminating connection due to administrator command
+LOG:  shutting down
+LOG:  database system is shut down

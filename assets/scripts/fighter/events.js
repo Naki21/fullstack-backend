@@ -11,7 +11,7 @@ const getRandomFighter = function() {
 };
 const setRandomFighter = function() {
   console.log('made it here2');
-  api.postBarracks()
+  api.postFighters()
     .then(ui.success)
     .catch(ui.failure);
 
@@ -39,7 +39,7 @@ const updateCurrentFighter = function() {
 
 
 const addHandlers = () => {
-  $('#update-current-button').on('click', updateCurrentFighter)
+  $('#update-current-button').on('click', updateCurrentFighter);
   $('#get-fighter-button').on('click', getRandomFighter);
   $('#save-fighter-button').on('click', setRandomFighter);
   $('#delete-fighter-button').on('click', deleteFighter);
