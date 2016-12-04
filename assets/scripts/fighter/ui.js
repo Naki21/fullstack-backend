@@ -13,16 +13,14 @@ const failure = (error) => {
 
 const getRandomSuccess = (data) => {
   let source = data.data;
-  if (source) {
     console.log(source);
     $("#fighterDisplay").html(showRandomFighter(source));
-  } else {
-    console.log('none');
-  }
+
   store.temp_fighter = source;
 };
 const setRandomSuccess = (data) => {
-  store.current_fighter = data.data;
+  console.log(data);
+  store.current_fighter = data.fighter.id;
 
     $("#fighterDisplay").html("Now Start Your Battle");
 };

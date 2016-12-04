@@ -39,6 +39,7 @@ const updateCurrentFighter = function() {
 
 
 const addHandlers = () => {
+  $('#fighterDisplay').on('click', setRandomFighter);
   $('#update-current-button').on('click', updateCurrentFighter);
   $('#get-fighter-button').on('click', getRandomFighter);
   $('#save-fighter-button').on('click', setRandomFighter);
