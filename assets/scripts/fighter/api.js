@@ -26,10 +26,9 @@ const postFighters = () =>
     headers: {
       Authorization: 'Token token=' + store.user.token,
     },
-
     data: {
       fighter: {
-        url: 'asdas',
+        url: store.temp_fighter.image_url,
         user_id: store.user.id,
       },
     },

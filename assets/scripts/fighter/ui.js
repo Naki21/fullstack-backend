@@ -21,6 +21,16 @@ const getRandomSuccess = (data) => {
   }
   store.temp_fighter = source;
 };
+const setRandomSuccess = (data) => {
+  let source = data.data;
+  if (source) {
+    console.log(source);
+    $("#fighterDisplay").html(showRandomFighter(source));
+  } else {
+    console.log('none');
+  }
+  store.temp_fighter = source;
+};
 
 module.exports = {
   getRandomSuccess,
