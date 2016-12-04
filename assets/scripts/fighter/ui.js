@@ -23,6 +23,7 @@ const setRandomSuccess = (data) => {
   console.log(data);
   store.current_fighter = data.fighter.id;
     $("#content").html(showFightBox(data)).hide().delay( 800 ).fadeIn( 400 );
+    $('#opponent').hide();
 };
 
 module.exports = {
