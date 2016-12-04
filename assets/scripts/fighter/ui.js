@@ -1,6 +1,7 @@
 'use strict';
 const store = require('../store.js');
 const showRandomFighter = require('../templates/show-random-fighter.handlebars');
+const showFightBox = require('../templates/fightbox.handlebars');
 
 const success = (data) => {
     console.log('Success');
@@ -21,8 +22,7 @@ const getRandomSuccess = (data) => {
 const setRandomSuccess = (data) => {
   console.log(data);
   store.current_fighter = data.fighter.id;
-
-    $("#fighterDisplay").html("Now Start Your Battle");
+    $("#content").html(showFightBox(data)).hide().delay( 800 ).fadeIn( 400 );
 };
 
 module.exports = {
