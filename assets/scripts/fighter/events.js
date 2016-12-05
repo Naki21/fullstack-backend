@@ -57,13 +57,10 @@ console.log(this);
     store.current_fighter.fighter_id = $(this).data().fighterId;
     ui.updateCurrentFighterSuccess();
 };
-const homePage = () => {
-  h
-};
+
 
 
 const addHandlers = () => {
-  $('#fighterDisplay').on('click', '#home', homePage);
 
   $('#get-all-fighter-button').on('click', getAllFighters);
   $('#fighterDisplay').on('click', '.btn-danger', deleteFighter);
