@@ -2,6 +2,14 @@
 const app = require('../app.js');
 const store = require('../store');
 
+const getAllFighters = () =>
+$.ajax({
+  url: app.host + "/fighters",
+  method: 'GET',
+  headers: {
+    Authorization: 'Token token=' + store.user.token,
+  },
+});
 const randomFighter = () =>
   $.ajax({
     url: app.host + "/fighter",
@@ -10,9 +18,9 @@ const randomFighter = () =>
       Authorization: 'Token token=' + store.user.token,
     },
   });
-const deleteBarracks = () =>
+const deleteFighter = (id) =>
   $.ajax({
-    url: app.host + "/fighters/" + 3,
+    url: app.host + "/fighters/" + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -34,7 +42,7 @@ const postFighters = () =>
     },
   });
 
-const postBattle = () =>
+const postBattle = (fighter) =>
   $.ajax({
     url: app.host + "/battles",
     method: 'POST',
@@ -43,15 +51,31 @@ const postBattle = () =>
     },
     data: {
       battle: {
-        "fighter_id": store.current_fighter.id,
+        "fighter_id": fighter.id,
       },
     },
   });
+  const updateBattle = (win) => {
+    $.ajax({
+      url: app.host + "/battles/" + store.battle.id,
+      method: 'PATCH',
+      headers: {
+        Authorization: 'Token token=' + store.user.token,
+      },
+      data: {
+        battle: {
+          'win': win,
+        },
+      },
+    });
+  };
 
 
 module.exports = {
+  updateBattle,
+  getAllFighters,
   randomFighter,
-  deleteBarracks,
+  deleteFighter,
   postFighters,
   postBattle
 };
