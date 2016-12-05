@@ -1431,7 +1431,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'http://localhost:4741'
+	  host: 'https://boiling-eyrie-23583.herokuapp.com'
 	};
 
 	module.exports = app;
