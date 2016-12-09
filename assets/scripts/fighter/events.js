@@ -31,9 +31,10 @@ const deleteFighter = function() {
     .catch(ui.failure);
 };
 const createBattle = function() {
-  console.log(store.current_fighter);
-
-  api.postBattle(store.current_fighter)
+  if ($(this).data().fighterId !== undefined){
+  store.current_fighter = $(this).data().fighterId;
+}
+  api.postBattle()
     .then(ui.createBattleSuccess)
     .catch(ui.failure);
 };
