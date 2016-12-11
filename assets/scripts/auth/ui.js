@@ -17,11 +17,15 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user;
   console.log(store.user);
+  $(".nav > li").toggleClass("hidden");
+
 };
 
 const signOutSuccess = () => {
   console.log('User signed out successfully');
   store.user = null;
+  $(".nav > li").toggleClass("hidden");
+
 };
 
 module.exports = {
