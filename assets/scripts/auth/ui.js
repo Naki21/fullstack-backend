@@ -1,5 +1,6 @@
 'use strict';
-
+const homePage =
+ require('../templates/home.handlebars');
 const store = require('../store.js');
 
 const success = (data) => {
@@ -18,6 +19,11 @@ const signInSuccess = (data) => {
   store.user = data.user;
   console.log(store.user);
   $(".nav > li").toggleClass("hidden");
+  $('.collapse').collapse('hide');
+  $('.starter-template').fadeOut(1000, function(){
+    $(this).html(homePage()).fadeIn(600);
+  });
+
 
 };
 

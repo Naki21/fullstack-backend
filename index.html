@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <nav class="navbar navbar-inverse" role="navigation">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -28,13 +28,12 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="hidden"><a href="">Home</a></li>
-              <li class="hidden"><a href="">About Us</a>
-                <li class="hidden">  <button type="button" id="get-all-fighter-button" class="btn btn-link btn">Get all fighers!</button></li>
+              <li class="hidden"><a>Home</a></li>
+              <li class="hidden"><a><button type="button" id="get-all-fighter-button" class="btn btn-link btn">Get all fighers!</button></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="hidden" ><a data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
-              <li class="hidden"><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></li>
+              <li class="hidden"><a data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
+              <li class="hidden"><a><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></a></li>
               <li><a data-toggle="modal" data-target="#sign-up-modal">Sign Up</a></li>
               <li class="dropdown">
                 <a href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
@@ -63,34 +62,18 @@
       </div>
     </div>
   </div>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
-        <!-- <button type="button" id="sign-out-button" class="btn btn-primary btn">Sign Out</button> -->
-
-
-      </div>
-      <!--/.nav-collapse -->
-    </div>
-  </nav>
-  <button type="button" id="get-all-fighter-button" class="btn btn-primary btn">Get all fighers!</button>
-  <button type="button" id="get-fighter-button" class="btn btn-primary btn">Get random figher!</button>
   <div class="container center-block">
     <div class="starter-template">
       <h1>Battle Gifs</h1>
-      <p class="lead">First, add a random Gif to fight for you.</p>
+      <p class="lead">You must be signed in to play.</p>
       <!-- Choose fighter display and set-->
       <div id="fighterDisplay" class="col-sm-12">
+        <button type="button" id="get-fighter-button" class="btn btn-primary btn">New Fighter</button>
       </div>
 
       <!-- /Choose fighter display and set-->
 
-      <div id="content" class="content">
-      </div>
+
     </div>
     <!--<button id="getSignInButton" class="btn btn-primary btn">Sign in now!</button>-->
 

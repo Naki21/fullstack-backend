@@ -74,11 +74,11 @@ console.log(this);
 
 const addHandlers = () => {
   // $('#fighterDisplay').on('click', '#home', homePage);
-  $('#get-all-fighter-button').on('click', getAllFighters);
+  $('get-all-fighter-button').on('click', getAllFighters);
   $('#fighterDisplay').on('click', '.btn-danger', deleteFighter);
   $('#fighterDisplay').on('click', '#save-fighter-button', setRandomFighter);
   $('#fighterDisplay').on('click', '#create-battle-button', createBattle);
-  $('#fighterDisplay').on('click', '#get-fighter-button', getRandomFighter);
+  $('.starter-template').on('click', '#get-fighter-button', getRandomFighter);
   $('#fighterDisplay').on('click', '#calc-win-button', updateBattle);
   $('#update-current-button').on('click', updateCurrentFighter);
   $('#get-fighter-button').on('click', getRandomFighter);
