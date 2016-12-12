@@ -20,7 +20,7 @@ const signInSuccess = (data) => {
   console.log(store.user);
   $(".nav > li").toggleClass("hidden");
   $('.collapse').collapse('hide');
-  $('.starter-template').fadeOut(1000, function(){
+  $('#fighterDisplay').fadeOut(1000, function(){
     $(this).html(homePage()).fadeIn(600);
   });
 
