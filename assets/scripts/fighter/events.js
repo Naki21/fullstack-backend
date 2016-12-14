@@ -3,25 +3,31 @@ const store = require ('../store.js');
 const api = require('./api');
 const ui = require('./ui');
 
+// Gets index of fighters from the api
 const getAllFighters = function () {
   console.log("herer thery come");
   api.getAllFighters()
   .then(ui.getAllFightersSuccess)
   .catch(ui.failure);
 };
+
+// Gets a random fighter from the Giphy api through my api
 const getRandomFighter = function() {
   console.log('made it here');
   api.randomFighter()
     .then(ui.getRandomSuccess)
     .catch(ui.failure);
 };
+
+// Creates a new fighter instance which references the url of the giphy instance
 const setRandomFighter = function() {
   console.log('made it here2');
   api.postFighters()
     .then(ui.setRandomSuccess)
     .catch(ui.failure);
-
 };
+
+// Deletes fighter by its associated id
 const deleteFighter = function() {
   console.log('made it here4');
   let id = $(this).data().fighterId;
@@ -30,10 +36,14 @@ const deleteFighter = function() {
     .then(ui.deleteFighterSuccess(id))
     .catch(ui.failure);
 };
-const createBattle = function() {
-  console.log(store.current_fighter);
 
-  api.postBattle(store.current_fighter)
+// Creates a new battle instance in the db of my api
+const createBattle = function() {
+// Check
+  if ($(this).data().fighterId !== undefined){
+  store.current_fighter = $(this).data().fighterId;
+}
+  api.postBattle()
     .then(ui.createBattleSuccess)
     .catch(ui.failure);
 };
@@ -58,14 +68,15 @@ console.log(this);
     ui.updateCurrentFighterSuccess();
 };
 
-
-
 const addHandlers = () => {
-
+  // $('#fighterDisplay').on('click', '#home', homePage);
   $('#get-all-fighter-button').on('click', getAllFighters);
+  $('#fighterDisplay').on('click', '#get-all-fighter-button', getAllFighters);
+  $('#fighterDisplay').on('click', 'r', deleteFighter);
   $('#fighterDisplay').on('click', '.btn-danger', deleteFighter);
   $('#fighterDisplay').on('click', '#save-fighter-button', setRandomFighter);
   $('#fighterDisplay').on('click', '#create-battle-button', createBattle);
+  $('.starter-template').on('click', '#get-fighter-button', getRandomFighter);
   $('#fighterDisplay').on('click', '#calc-win-button', updateBattle);
   $('#update-current-button').on('click', updateCurrentFighter);
   $('#get-fighter-button').on('click', getRandomFighter);

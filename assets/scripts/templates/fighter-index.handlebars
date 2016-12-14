@@ -1,21 +1,16 @@
-  <div class="container">
 
-    <div class="row">
 
       <div class="col-lg-12">
         <h1 class="page-header">Your Barracks</h1>
-        <p> Here you can set your durrent fighter or delete them</p>
+        <p> Here you can set your current fighter or delete them</p>
       </div>
-
 {{#each fighters as |fighter|}}
       <div class="col-lg-3 col-md-4 col-xs-6 thumb" id="fighter-{{fighter.id}}">
         <a class="thumbnail" >
           <img class="img-responsive" src="{{fighter.url}}" alt="{{fighter.url}}">
-          <button type="button" data-fighter-id='{{fighter.id}}' class="btn btn-success btn-xs">Set</button>
+          <button type="button" id="create-battle-button" data-fighter-id='{{fighter.id}}' class="btn btn-success btn-xs">Set</button>
           <button type="button" data-fighter-id='{{fighter.id}}' class="btn btn-danger btn-xs">Delete</button>
 
         </a>
       </div>
 {{/each}}
-    </div>
-  </div>
