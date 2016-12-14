@@ -1,5 +1,5 @@
 'use strict';
-const showSignInTemplate = require('../templates/show-sign-in.handlebars');
+
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 const store = require('../store');
@@ -21,7 +21,6 @@ const onSignIn = function(event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.failure);
-  $('#sign-in-modal').modal('hide');
 };
 
 const onChangePassword = function(event) {
@@ -35,16 +34,12 @@ const onChangePassword = function(event) {
 const onSignOut = function(event) {
   event.preventDefault();
   api.signOut(store.user)
-    .then(ui.success)
+    .then(ui.signOutSuccess)
     .catch(ui.failure);
 };
-const showSignIn = () => {
-  $('.content').html(showSignInTemplate(content));
-  console.log("yoyoyoy");
-};
+
 
 const addHandlers = () => {
-  $('#getSignInButton').on('click', showSignIn);
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.change-password-form').on('submit', onChangePassword);

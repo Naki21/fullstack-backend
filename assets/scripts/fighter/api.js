@@ -42,7 +42,7 @@ const postFighters = () =>
     },
   });
 
-const postBattle = (fighter) =>
+const postBattle = () =>
   $.ajax({
     url: app.host + "/battles",
     method: 'POST',
@@ -51,7 +51,7 @@ const postBattle = (fighter) =>
     },
     data: {
       battle: {
-        "fighter_id": fighter.id,
+        "fighter_id": store.current_fighter,
       },
     },
   });

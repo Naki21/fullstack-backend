@@ -9,53 +9,66 @@
   <title>Gif Battle</title>
 
 </head>
+
 <body>
-
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-up-modal">Sign up</button>
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
-        <button type="button" class="btn btn-primary btn" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
-        <button type="button" id="sign-out-button" class="btn btn-primary btn">Sign Out</button>
-
-
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 </button>
+            <a class="navbar-brand">Gif Battle</a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="hidden"><a><button type="button" id="get-all-fighter-button" class="btn btn-link btn">Barracks</button></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="hidden"><a data-toggle="modal" data-target="#change-password-modal">Change Password</a></li>
+              <li class="hidden"><a><button type="button" id="sign-out-button" class="btn btn-link btn ">Sign Out</button></a></li>
+              <li><a data-toggle="modal" data-target="#sign-up-modal">Sign Up</a></li>
+              <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">Sign in <b class="caret"></b></a>
+                <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="sign-in-form">
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="credentials[email]" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <input type="password" class="form-control" name="credentials[password]" id="exampleInputPassword1" placeholder="Password">
+                          </div>
+                          <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                        </form>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </nav>
       </div>
-      <!--/.nav-collapse -->
     </div>
-  </nav>
-      <button type="button" id="get-all-fighter-button" class="btn btn-primary btn">Get all fighers!</button>
+  </div>
   <div class="container center-block">
     <div class="starter-template">
-      <h1>Battle Gifs</h1>
-      <p class="lead">First, add a random Gif to fight for you.</p>
-      <!-- Choose fighter display and set-->
-          <div id="fighterDisplay" class="col-sm-12">
-          </div>
-      <button type="button" id="get-fighter-button" class="btn btn-primary btn">Get random figher!</button>
-      <!-- /Choose fighter display and set-->
 
-      <div id="content" class="content">
-      </div>
+      <!-- /Choose fighter display and set-->
     </div>
     <!--<button id="getSignInButton" class="btn btn-primary btn">Sign in now!</button>-->
-
   </div>
-  <!-- /.container -->
-<!--  <div class="container">
-    <div class="row">
-      <div class="col-sm-offset-1 col-sm-4"><img src="" class="img-rounded img-responsive" alt="Responsive image"></div>
 
-      <div class="col-sm-2">V.S.</div>
-      <div class="col-sm-4"><img src="" class="img-rounded img-responsive" alt="Responsive image"></div>
-
-      <button type="button" id="create-battle-button" class="btn btn-primary btn">Create Battle!</button>
-      <button type="button" id="delete-fighter-button" class="btn btn-primary btn">Delete Fighter!</button>
-      <button type="button" id="update-current-button" class="btn btn-primary btn">Save random figher!</button>
-    </div>
-
-  </div>-->
   <!--sign up modle-->
   <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -163,7 +176,9 @@
   </div>
   <!-- end of Stats Modal-->
 
-
+<div class="navbar navbar-default navbar-fixed-bottom">
+<img class="pbg" src="./assets/styles/PoweredBy_640_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Powered by Giphy" />
+</div>
 </body>
 
 </html>
