@@ -69,7 +69,6 @@ console.log(this);
 };
 
 const addHandlers = () => {
-  // $('#fighterDisplay').on('click', '#home', homePage);
   $('#get-all-fighter-button').on('click', getAllFighters);
   $('#fighterDisplay').on('click', '#get-all-fighter-button', getAllFighters);
   $('#fighterDisplay').on('click', 'r', deleteFighter);
