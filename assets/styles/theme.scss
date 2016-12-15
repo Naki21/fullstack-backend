@@ -1,18 +1,24 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
   color: #fff;
   background: #000;
   padding-top: 40px;
+  margin-bottom: 60px;
   text-align: center;
   text-shadow: 3px 3px 3px rgba(#ffffff, 0.3);
 }
 
-.pbg {
-  height: 80px;
-}
 
+.pbg {
+  height: 70px;
+}
 .img-responsive {
   align-items: baseline;
   display: inline-block;
+  max-height: 300px;
 }
 @media screen and (min-width: $screen-sm) {
   .navbar-default {
@@ -28,4 +34,12 @@ body {
   margin: 10%;
   padding: 0 15px 0 0;
   text-align: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
 }
