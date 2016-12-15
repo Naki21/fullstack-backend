@@ -1680,8 +1680,8 @@ webpackJsonp([0],[
 	  console.log(fighters);
 	  $("#fighterDisplay").html(showFighterIndex(fighters));
 	};
-	var getRandomSuccess = function getRandomSuccess(data) {
-	  var source = data.data;
+	var getRandomSuccess = function getRandomSuccess(hash) {
+	  var source = hash.hash;
 	  console.log(source);
 	  $("#fighterDisplay").html(showRandomFighter(source));
 	  store.temp_fighter = source;
@@ -1743,9 +1743,9 @@ webpackJsonp([0],[
 	module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var helper;
 
-	  return "<img class=\"img-rounded img-responsive center-block\" src="
+	  return "<img class=\"img-rounded img-responsive center-block\" src=\""
 	    + container.escapeExpression(((helper = (helper = helpers.image_original_url || (depth0 != null ? depth0.image_original_url : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"image_original_url","hash":{},"data":data}) : helper)))
-	    + " alt=\"Responsive image\">\n<hr>\n<div class=\"col-xs-12\">\n<button type=\"button\" id=\"save-fighter-button\" class=\"btn btn-primary btn\">Save Figher</button>\n<button type=\"button\" id=\"get-fighter-button\" class=\"btn btn-primary btn\">Next</button>\n</div>\n";
+	    + "\" alt=\"Responsive image\">\n<hr>\n<div class=\"col-xs-12\">\n<button type=\"button\" id=\"save-fighter-button\" class=\"btn btn-primary btn\">Save Figher</button>\n<button type=\"button\" id=\"get-fighter-button\" class=\"btn btn-primary btn\">Next</button>\n</div>\n";
 	},"useData":true});
 
 /***/ },
