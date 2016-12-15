@@ -5,23 +5,17 @@ const showFightBox = require('../templates/fightbox.handlebars');
 const showFighterIndex = require('../templates/fighter-index.handlebars');
 const battle_button = require('../templates/new-battle-button.handlebars');
 const play_again = require('../templates/play-again-button.handlebars');
-const success = (data) => {
-  console.log('Success');
-  console.log(data);
-};
 
 const failure = (error) => {
   console.error(error);
 };
 
 const getAllFightersSuccess = (fighters) => {
-  console.log(fighters);
   $("#fighterDisplay").html(showFighterIndex(fighters));
-
+  $('.lead').html('');
 };
 const getRandomSuccess = (hash) => {
   let source = hash.hash;
-  console.log(source);
   $("#fighterDisplay").html(showRandomFighter(source));
   store.temp_fighter = source;
 };
@@ -30,7 +24,6 @@ const deleteFighterSuccess = function(id) {
   $(id).hide();
 };
 const setRandomSuccess = (data) => {
-  console.log(data);
   store.current_fighter = data.fighter.id;
   $('#get-fighter-button').hide();
   $('.lead').fadeOut(600, function() {
@@ -42,7 +35,6 @@ const setRandomSuccess = (data) => {
 const createBattleSuccess = (data) => {
   let oppo = data.battle;
   store.battle = data.battle;
-  console.log(oppo);
   $('.lead').fadeOut(600);
   $('#fighterDisplay').html(showFightBox(oppo));
   $('#create-battle-button').hide(500);
@@ -72,6 +64,5 @@ module.exports = {
   createBattleSuccess,
   setRandomSuccess,
   getRandomSuccess,
-  success,
   failure
 };

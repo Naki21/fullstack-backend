@@ -10,7 +10,6 @@ const onSignUp = function(event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.signUp(data)
-    .then(ui.success)
     .catch(ui.failure);
   $('#sign-up-modal').modal('hide');
 };
@@ -27,7 +26,6 @@ const onChangePassword = function(event) {
   let data = getFormFields(this);
   event.preventDefault();
   api.changePassword(data)
-    .then(ui.success)
     .catch(ui.failure);
 };
 //There is a better way to log out individual player
