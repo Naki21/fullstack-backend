@@ -20,7 +20,7 @@ const getAllFightersSuccess = (fighters) => {
 
 };
 const getRandomSuccess = (hash) => {
-  let source = hash.data;
+  let source = hash.hash;
   console.log(source);
   $("#fighterDisplay").html(showRandomFighter(source));
   store.temp_fighter = source;
