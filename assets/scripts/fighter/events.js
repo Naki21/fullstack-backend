@@ -54,10 +54,7 @@ const updateBattle = () => {
   api.updateBattle(win);
   ui.winState(win);
 };
-const updateCurrentFighter = function() {
-    store.current_fighter.fighter_id = $(this).data().fighterId;
-    ui.updateCurrentFighterSuccess();
-};
+
 
 const addHandlers = () => {
   $('#get-all-fighter-button').on('click', getAllFighters);
